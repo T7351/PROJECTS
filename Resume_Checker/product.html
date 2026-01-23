@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(135deg, #dff7ff, #e9faff, #ffffff);
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .upload{
+            height: 60vh;
+            width: 90vw;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .upload h1 {
+            font-size: 2rem;
+            color: #0d578d;
+        }
+        .upload_main{
+                min-width: 40vw;
+                padding: 3rem 2rem;
+                border: 2px dashed #0d578d;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+        }
+        .upload-btn {
+            padding: 12px 25px;
+            background: #00b894;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .upload-btn:hover {
+            background: #009972;
+        }
+        .upload_main p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .upload_main {
+                width: 90%;
+                padding: 2rem 1rem;
+            }
+            .upload h1 {
+                font-size: 1.5rem;
+            }
+            .mobile{
+                display: none;
+            }
+        }
+
+
+.ats-card {
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to   {opacity: 1; transform: translateY(0);}
+}
+
+/* Header */
+.ats-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #0d578d;
+    margin-bottom: 1rem;
+}
+
+.ats-header i {
+    font-size: 1.6rem;
+    color: #00b894;
+}
+
+/* Score Circle */
+.ats-score-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(#00b894 var(--score, 0deg), #d8ffef 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00b894;
+    position: relative;
+}
+
+/* inner circle using border instead of ::before */
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    border: 8px solid white;
+    z-index: 1;
+}
+
+/* score text */
+.circle span {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Suggestions */
+.section-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #0d578d;
+}
+
+#atsSuggestions li {
+    background: #f3f9ff;
+    padding: 10px 12px;
+    border-left: 4px solid #00b894;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="upload">
+        <h1>Get your resume score now!</h1>
+        <div class="upload_main">
+            <img src="./Image/Cloud-upload.png" alt="Cloud-upload">
+            <label class="upload-btn">
+                Upload Your Resume
+                <input type="file" hidden id="uploadInput" accept=".pdf,.doc,.docx" >
+            </label>
+            <p class="mobile">Drop your resume here or choose a file.</p>
+            <p>PDF & DOCX only. Max 2MB file size.</p>
+        </div>
+    </div>
+
+    <textarea id="userInput" hidden></textarea>
+
+    <div id="atsResultCard" class="ats-card" style="display: none;">
+        <div class="ats-header">
+            <i class="fas fa-clipboard-check"></i>
+            <h2>ATS Evaluation Result</h2>
+        </div>
+        <div class="ats-score-box">
+            <div class="circle" id="atsScoreCircle"><span>0%</span></div>
+        </div>
+        <h3 class="section-title">Suggestions for Improvement</h3>
+        <ul id="atsSuggestions"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
