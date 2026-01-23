@@ -1,0 +1,171 @@
+nav {
+    display: block;
+    width: 100%;
+    background-color: lightgray; 
+    padding: 12px;
+    text-align: center; 
+}
+nav a {
+    margin: 0 50px ;
+    text-decoration: none;
+    color: black;
+}
+figure img {
+    width: 100%;    
+    height: auto;
+}
+footer{
+    text-align: center;
+    padding: 15px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+section {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+form input, 
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.btn.save {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn.save:hover {
+  background-color: #45a049;
+}
+
+.btn.reset {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn.reset:hover {
+  background-color: #d32f2f;
+}
+
+#hours {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fffdf5;
+    border: 2px solid #f4c16c;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-align: center;
+}
+
+#hours p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#hours dl {
+    background: #ffeed0;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#hours dt {
+    font-weight: bold;
+    color: #a0491e;
+}
+
+#hours dd {
+    margin: 0 0 15px 0;
+    color: #444;
+}
+
+#hours a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: #ff7f50;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+#hours a:hover {
+    background: #e65c2e;
+}
+
+#imghours img {
+  width: 100%;      
+  max-height: 150px; 
+  object-fit: cover; 
+  border-radius: 10px;
+  display: block;    
+  margin: 0 auto;  
+}
+
+abbr {
+  text-decoration: none;
+}
